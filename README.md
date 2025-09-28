@@ -116,7 +116,6 @@ Forecast
 
 ## 🔮 Future Enhancements
 
-* Add 5–7 day detailed forecast.
 * Include weather icons (☀️ 🌧 ☁️).
 * Improve mobile responsiveness.
 * Add map integration.
@@ -126,6 +125,3 @@ Forecast
 ## 👨‍💻 Author
 
 **Kelwin Kishore**
-
-* GitHub: [your-github-link]
-* Email: [your-email]
