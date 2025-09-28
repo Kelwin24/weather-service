@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Weather Service</title>
+    <style>
+    body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* soft purple → blue */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.weather-container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+input, button {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    margin: 8px 0;
+    width: 80%;
+    font-size: 16px;
+}
+
+input {
+    background: rgba(255,255,255,0.25);
+    color: #fff;
+}
+
+input::placeholder {
+    color: #e0e0e0;
+}
+
+button {
+    background: rgba(255,255,255,0.3);
+    color: #2575fc; /* deep blue for contrast */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background: rgba(255,255,255,0.5);
+}
+
+    </style>
+</head>
+<body>
+    <div class="weather-container">
+        <h1>Weather Service</h1>
+        <form action="/weather" method="post">
+            <input type="text" name="location" placeholder="Enter city" required>
+            <input type="number" name="days" min="1" max="7" placeholder="Forecast days">
+            <button type="submit">Check Weather</button>
+        </form>
+    </div>
+</body>
+</html>

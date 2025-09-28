@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Weather in [[${location}]]</title>
+<style>
+body {
+	font-family: 'Poppins', sans-serif;
+	background: linear-gradient(135deg, #6a11cb, #2575fc);
+	/* same purple → blue gradient */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+}
+
+.weather-card {
+	background: rgba(255, 255, 255, 0.15);
+	backdrop-filter: blur(12px);
+	border-radius: 20px;
+	padding: 30px;
+	width: 100%;
+	max-width: 400px;
+	text-align: center;
+	color: #fff;
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+li {
+	background: rgba(255, 255, 255, 0.2);
+	margin: 5px 0;
+	padding: 10px;
+	border-radius: 8px;
+}
+
+a {
+	display: block;
+	margin-top: 20px;
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+	transition: color 0.3s ease;
+}
+
+a:hover {
+	color: #ffeb3b; /* subtle highlight on hover */
+}
+</style>
+</head>
+<body>
+	<div class="weather-card">
+		<h1>
+			Weather in <span th:text="${location}"></span>
+		</h1>
+
+		<h2>Current Weather</h2>
+		<p>
+			Condition: <span th:text="${current.description}"></span>
+		</p>
+		<p>
+			Temperature: <span th:text="${current.temperature}"></span> °C
+		</p>
+
+		<h2>Forecast</h2>
+		<ul>
+			<li th:each="day : ${forecast}"><span
+				th:text="${day.description}"></span> - <span
+				th:text="${day.temperature}"></span> °C</li>
+		</ul>
+
+		<a href="/">Check another city</a>
+	</div>
+</body>
+</html>
+
